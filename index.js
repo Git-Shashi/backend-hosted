@@ -5,33 +5,34 @@ dotenv.config();
 const app = express();
 
 // Home route - Cherry Blossom
-app.get('/', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Cherry Blossom</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="flex items-center justify-center min-h-screen bg-gray-100">
-      <div class="flex max-w-3xl bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div class="w-1/2 flex items-center justify-center bg-pink-50">
-          <img src="https://images.unsplash.com/photo-1725125360929-0e9307f34a48?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNoZXJyeSUyMGJsb3Nzb20lMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D" alt="Cherry Blossom" class="w-32 h-32 object-cover rounded-full" />
-        </div>
-        <div class="w-1/2 p-6 flex flex-col justify-center">
-          <h2 class="text-2xl font-bold text-pink-600 mb-4">Cherry Blossoms</h2>
-          <p class="text-gray-700 text-lg leading-relaxed">
-            Cherry blossoms, or <em>sakura</em>, are one of the most iconic flowers in Japan. 
-            They symbolize renewal and the fleeting nature of life. Every spring, cherry blossom 
-            festivals attract millions of people to enjoy their short yet breathtaking bloom.
-          </p>
-        </div>
-      </div>
-    </body>
-    </html>
-  `);
+app.get('/jokes', (req, res) => {
+  res.send( [
+  {
+    id: 1,
+    title: "Why did the developer go broke?",
+    joke: "Because he used up all his cache."
+  },
+  {
+    id: 2,
+    title: "Why do programmers prefer dark mode?",
+    joke: "Because light attracts bugs!"
+  },
+  {
+    id: 3,
+    title: "How do you comfort a JavaScript bug?",
+    joke: "You console it."
+  },
+  {
+    id: 4,
+    title: "Why was the function sad?",
+    joke: "Because it didn’t get called."
+  },
+  {
+    id: 5,
+    title: "Why did the React developer stay calm?",
+    joke: "Because he knew how to handle state."
+  }
+]);
 });
 
 // Twitter route
